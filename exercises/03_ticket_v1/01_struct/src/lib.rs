@@ -9,6 +9,16 @@
 mod tests {
     use super::*;
 
+    struct Order {
+        price: usize,
+        quantity: usize
+    }
+    impl Order {
+        fn is_available(self) -> bool {
+            self.quantity > 0
+        }
+    }
+
     #[test]
     fn test_order_is_available() {
         let order = Order {
